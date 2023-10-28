@@ -1,0 +1,90 @@
+nav {
+    //padding: 30px;
+    display: flex;
+    height: 13vh;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+  
+  
+    &.router-link-exact-active {
+      color: #5e17eb;
+      font-size: 2vw;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: system-ui, 'Segoe UI', Roboto, Oxygen, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+  
+  }
+
+  .categ {
+    color: #153b75;
+    font-size: 1.5vw;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: system-ui, 'Segoe UI', Roboto, Oxygen, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .categ:hover {
+    transition: 0.5s;
+    color: #2669c7;
+    cursor: pointer;
+  }
+
+  .imgLogo {
+    width: 5vw;
+    height: auto;
+  }
+  
+  .imgLogo:hover {
+    transition: 1s;
+    scale: 120%;
+  }
+  
+  .icons {
+    font-size: 1.8vw;
+    text-decoration: none;
+  }
+  
+  .icons:hover {
+    transition: 0.5s;
+    scale: 120%;
+  }
+
+  #iconP{
+    font-size: 1.8vw;
+    text-decoration: none;
+    background-color:#4b89df ;
+     border-style:dashed;
+     border-radius: 10rem;
+     border-color: #4b89df ;
+  }
+  
+  #iconP:hover{
+    transition: 0.7s;
+    cursor: pointer;
+    scale: 120%;
+  }
+  
+  .divPlaceholder {
+    background-color: #3463a3;
+    padding: 0.3% 0.3%;
+    border-radius: 10px;
+  }
+  #barraPesquisa{
+    font-size: 1.5vw;
+  }
+  
+  .barra {
+    background-color: #3463a3;
+    height: 5px;
+  }
+
+  .dropdown-item{
+    font-size: 1.5vw;
+    border: none;
+  }
+  #selectOpc{
+    font-size: 1.4vw;
+    border: none;
+  }

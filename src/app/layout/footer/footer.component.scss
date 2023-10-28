@@ -1,0 +1,51 @@
+footer{
+    height: 16vh;
+    background-color: rgb(37, 37, 37);
+    margin-top: 5vh;
+}
+
+p{
+    color: white;
+}
+li{
+    color: white;
+    font-size: 95%;
+}
+li:hover{
+    color: rgb(105, 105, 105);
+}
+
+ul{
+    list-style: none;
+ }
+ #imgInsta{
+     height: 60px;
+     width: auto;
+ }
+ #imgFacebook{
+     width: auto;
+     height: 47px;
+ }
+ img:hover{
+     transition: 0.5s;
+     scale: 120%;
+ }
+ .redesDiv{
+    width: 30%;
+       display: flex;
+       gap: 20%;
+       align-items: center;
+       padding-left: 08%;
+   }
+   .contatoDiv{
+       width: 70%;
+       display: flex;
+     flex-direction: row-reverse;
+     padding-right: 10%;
+     padding-top: 1%;
+     align-items: center;
+   }
+   .divFooter{
+        display: flex;
+        flex-direction: space-between;
+   }

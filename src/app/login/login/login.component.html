@@ -1,0 +1,16 @@
+<div class="divLogin">
+    <form action="">
+        <h1>Login 🌙</h1>
+        <p>Nome de Usuário:</p>
+        <input type="text" name="Usuario" placeholder="Usuario" class="inputMod" [(ngModel)]="adm.userAdm">
+        <br>
+        <p id="senhaInput">Senha:</p>
+        <input type="password" name="Senha" placeholder="Senha" class="inputMod" [(ngModel)]="adm.senhaAdm">
+        <br>
+        <br>
+        <input type="button" value="Logar" class="btn btn-primary" id="botao" (click)="logar()">
+        <br>
+        <br>
+        <p class="cadastrar" routerLink="/cadLogin">Não tem uma conta? Cadastre-se!!</p>
+    </form>
+</div>

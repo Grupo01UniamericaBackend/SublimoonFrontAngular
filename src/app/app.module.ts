@@ -9,6 +9,7 @@ import { IndexComponent } from './layout/index/index.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login/login.component';
+import { CadloginComponent } from './login/cadlogin/cadlogin.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login/login.component';
     FooterComponent,
     HeaderComponent,
     IndexComponent,
-    LoginComponent
+    LoginComponent,
+    CadloginComponent
   ],
   imports: [
     BrowserModule,

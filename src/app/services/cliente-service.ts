@@ -22,12 +22,11 @@ export class ClienteService {
         return this.http.get<Cliente[]>(list);
     }
         
-    save(cliente: Cliente): Observable<any> {
-        return this.http.post<any>(this.API, cliente);
+    save(cliente: Cliente): Observable<Cliente> {
+        return this.http.post<Cliente>(this.API, cliente);
     }
-    update(id: Number, cliente: Cliente) : Observable<any>{
-        const list = `${this.API}/${id}`;
-        return this.http.put<any>(list, cliente);
+    update(cliente: Cliente) : Observable<Cliente>{
+        return this.http.put<Cliente>(this.API, cliente);
     }
           
     delete(id: number): Observable<any> {

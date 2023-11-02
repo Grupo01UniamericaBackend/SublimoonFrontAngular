@@ -4,11 +4,11 @@ export class Cliente extends AbstratcEntity {
 
     telefone!: String;
 
-    email!: String;;
+    email!: String;
 
-    nome!: String;;
+    nome!: String;
 
-    senha!: String;;
+    senha!: String;
 
-    cpf!: String;;
+    cpf!: String;
 }

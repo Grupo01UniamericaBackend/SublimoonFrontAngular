@@ -2,21 +2,21 @@
     <form action="">
         <h1>Crie sua Conta !!</h1>
         <p>Digite seu nome de Usuário:</p>
-        <input type="text" name="Usuario" placeholder="Usuario" class="inputMod">
+        <input type="text" name="Usuario" placeholder="Usuario" class="inputMod" [(ngModel)]="cliente.nome">
         <br>
         <p id="senhaInput">Digite sua senha:</p>
-        <input type="text" name="Senha" placeholder="Senha" class="inputMod">
+        <input type="text" name="Senha" placeholder="Senha" class="inputMod" [(ngModel)]="cliente.senha">
         <br>
         <p id="telefoneInput">Digite seu telefone:</p>
-        <input type="number" name="Telefone" placeholder="Telefone" class="inputMod">
+        <input type="text" name="Telefone" placeholder="Telefone" class="inputMod" [(ngModel)]="cliente.telefone">
         <br>
         <p id="emailInput">Digite seu e-mail:</p>
-        <input type="text" name="Email" placeholder="Email" class="inputMod">
+        <input type="text" name="Email" placeholder="Email" class="inputMod" [(ngModel)]="cliente.email">
         <br>
         <p id="cpfInput">Digite seu CPF:</p>
-        <input type="number" name="CPF" placeholder="CPF" class="inputMod">
+        <input type="text" name="CPF" placeholder="CPF" class="inputMod" [(ngModel)]="cliente.cpf">
         <br>
         <br>
-        <input routerLink="/admin/sabores" type="button" value="Cadastrar" class="btn btn-primary" id="botao">
+        <input routerLink="/admin" type="button" value="Cadastrar" class="btn btn-primary" id="botao" (click)="salvar()">
     </form>
 </div>

@@ -31,6 +31,7 @@ export class CadloginComponent {
       this.clienteService.save(this.cliente).subscribe({
         next: cliente => {
           this.retorno.emit(cliente);
+          alert('SEJA BEM VINDO(A)!!');
         },
         error: erro => {
           alert('Erro!! verificar no console!!');

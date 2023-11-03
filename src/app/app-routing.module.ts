@@ -3,12 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './layout/index/index.component';
 import { LoginComponent } from './login/login/login.component';
 import { CadloginComponent } from './login/cadlogin/cadlogin.component';
+import { ProdutoDetailsComponent } from './produto/produto-details/produto-details.component';
+import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"login", pathMatch: 'full'},
   {path:"login", component: LoginComponent},
   {path:"cadLogin", component: CadloginComponent},
-  {path: "admin", component: IndexComponent}
+  {path: "admin", component: IndexComponent},
+  {path: "Cadproduto", component: ProdutoDetailsComponent},
+  {path: "produto", component: ProdutoListComponent}
 ];
 
 @NgModule({

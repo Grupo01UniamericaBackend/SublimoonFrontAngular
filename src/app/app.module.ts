@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login/login.component';
 import { CadloginComponent } from './login/cadlogin/cadlogin.component';
+import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
+import { ProdutoDetailsComponent } from './produto/produto-details/produto-details.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { CadloginComponent } from './login/cadlogin/cadlogin.component';
     HeaderComponent,
     IndexComponent,
     LoginComponent,
-    CadloginComponent
+    CadloginComponent,
+    ProdutoListComponent,
+    ProdutoDetailsComponent
   ],
   imports: [
     BrowserModule,

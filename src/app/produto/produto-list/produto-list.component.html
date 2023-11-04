@@ -8,6 +8,7 @@
     <div class="retangulos">
         <div class="retangulo" *ngFor="let produto of lista;let i = index">
             <div><strong>#ID:</strong> {{ produto.id }}</div>
+            <img src={{produto.imagem}}>
             <div><strong>Nome:</strong> {{ produto.nome }}</div>
             <div><strong>Detalhes:</strong> {{ produto.descricao }}</div>
             <div><strong>Preço:</strong> {{ produto.preco }}</div>

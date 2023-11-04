@@ -6,14 +6,15 @@
         <input type="text" [(ngModel)]="produto.nome" class="form-control"  name="name" placeholder="Coca-cola">
       </div>
       <br>
-      <div class="p-2">
-        <label for="formGroupExampleInput2" class="form-label">categoria</label>
-        <input type="text" [(ngModel)]="produto.categoria" class="form-control" name="categoria" placeholder="2L...">
-      </div>    
-      <div class="p-2">
-        <label for="formGroupExampleInput2" class="form-label">cor</label>
-        <input type="text" [(ngModel)]="produto.cor" class="form-control" name="cor" placeholder="12...">
-      </div>   
+     <p> categorias</p>
+      <select id="categoria" [(ngModel)]="produto.categoria">
+        <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+      </select>
+      <p> cor</p>
+      <select id="cor" [(ngModel)]="produto.cor">
+        <option *ngFor="let cor of cores" [value]="cor">{{ cor }}</option>
+      </select>
+        
       <div class="p-2">
         <label for="formGroupExampleInput2" class="form-label">descrição</label>
         <input type="text" [(ngModel)]="produto.descricao" class="form-control" name="descricao" placeholder="12...">
@@ -38,6 +39,8 @@
         <label for="formGroupExampleInput2" class="form-label">img</label>
         <input type="text" [(ngModel)]="produto.imagem" class="form-control" name="img" placeholder="12...">
       </div>
+     
+
       <div class="d-flex justify-content-center">
         <button type="submit" class="btn btn-primary" *ngIf="modoEdit == false"(click)="salvar()">cadastrar</button>
         <button type="submit" class="btn btn-primary" *ngIf="modoEdit == true" (click)="editar()">editar</button>

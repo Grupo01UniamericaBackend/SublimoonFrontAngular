@@ -23,7 +23,7 @@ import { ProdutoDetailsComponent } from './produto/produto-details/produto-detai
     LoginComponent,
     CadloginComponent,
     ProdutoListComponent,
-    ProdutoDetailsComponent
+    ProdutoDetailsComponent,
   ],
   imports: [
     BrowserModule,

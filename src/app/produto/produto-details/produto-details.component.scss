@@ -5,9 +5,7 @@ body {
 
 /* Estilizar o contêiner principal */
 .row {
-    margin-top: 20px;
     background-color: #FFFFFF; /* Branco */
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -43,18 +41,11 @@ button.btn-primary {
     color: #FFFFFF; /* Branco */
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 2vw;
 }
-
-/* Estilizar os botões de edição e cadastro */
 button.btn-primary.btn-light {
-    background-color: #B0E0E6; /* Azul claro */
     color: #1E90FF; /* Azul médio */
 }
 
-/* Espaçamento entre elementos */
-.p-2 {
-    margin-top: 10px;
-}

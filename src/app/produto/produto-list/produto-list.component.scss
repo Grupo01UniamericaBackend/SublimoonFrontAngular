@@ -42,12 +42,13 @@ h1{
 
 #btn{
     color: white;
-    font-size: 2vw;
+    font-size: 3vw;
     font-weight: 600;
     margin-left: 4vw;
 }
 
 .imagemProd{
+    min-width: 18vw;
     width: 18vw;
     border-radius: 4px;
     margin-bottom: 2vh;
@@ -58,5 +59,8 @@ h1{
 }
 
 #editarButton{
-    margin-right: 2vw;
+    margin-right: 1.5vw;
+}
+.divADM{
+    margin-bottom: 1vw;
 }

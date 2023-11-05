@@ -1,49 +1,54 @@
-<p>produto-details works!</p>
 <div class="row d-flex justify-content-center  ">
     <div d-flex flex-column mb-3>
       <div class="p-2  ">
-        <label for="formGroupExampleInput" class="form-label">nome</label>
-        <input type="text" [(ngModel)]="produto.nome" class="form-control"  name="name" placeholder="Coca-cola">
+        <label for="formGroupExampleInput" class="form-label">Nome</label>
+        <input type="text" [(ngModel)]="produto.nome" class="form-control"  name="name" placeholder="Nome do Produto">
       </div>
       <br>
-     <p> categorias</p>
-      <select id="categoria" [(ngModel)]="produto.categoria">
-        <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
-      </select>
-      <p> cor</p>
-      <select id="cor" [(ngModel)]="produto.cor">
-        <option *ngFor="let cor of cores" [value]="cor">{{ cor }}</option>
-      </select>
+      <div class="d-flex">
+        <div class="p-2 col">
+          <p>Categorias</p>
+          <select id="categoria" [(ngModel)]="produto.categoria" class="form-select">
+            <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+          </select>
+        </div>
+        <div class="p-2 col">
+          <p>Cor</p>
+          <select id="cor" [(ngModel)]="produto.cor" class="form-select">
+            <option *ngFor="let cor of cores" [value]="cor">{{ cor }}</option>
+          </select>
+        </div>
+      </div>
         
       <div class="p-2">
-        <label for="formGroupExampleInput2" class="form-label">descrição</label>
-        <input type="text" [(ngModel)]="produto.descricao" class="form-control" name="descricao" placeholder="12...">
+        <label for="formGroupExampleInput2" class="form-label">Descrição</label>
+        <input type="text" [(ngModel)]="produto.descricao" class="form-control" name="descricao" placeholder="Descrição do Produto">
       </div>  
       <div class="p-2">
         <label for="formGroupExampleInput2" class="form-label">Preço</label>
-        <input type="number" [(ngModel)]="produto.preco" class="form-control" name="preco" placeholder="12...">
+        <input type="number" [(ngModel)]="produto.preco" class="form-control" name="preco" placeholder="9.99">
       </div>  
       <div class="p-2">
-        <label for="formGroupExampleInput2" class="form-label">quantidade</label>
-        <input type="number" [(ngModel)]="produto.quantidade" class="form-control" name="quantidade" placeholder="12...">
+        <label for="formGroupExampleInput2" class="form-label">Quantidade</label>
+        <input type="number" [(ngModel)]="produto.quantidade" class="form-control" name="quantidade" placeholder="Quantidade">
       </div>  
       <div class="p-2">
         <label for="formGroupExampleInput2" class="form-label">Avaliação</label>
-        <input type="number" [(ngModel)]="produto.mediaAvaliacao" class="form-control" name="avaliacao" placeholder="12...">
+        <input type="number" [(ngModel)]="produto.mediaAvaliacao" class="form-control" name="avaliacao" placeholder="1-5">
       </div>  
       <div class="p-2">
-        <label for="formGroupExampleInput2" class="form-label">tamanho</label>
-        <input type="text" [(ngModel)]="produto.tamanho" class="form-control" name="tamanho" placeholder="12...">
+        <label for="formGroupExampleInput2" class="form-label">Tamanho</label>
+        <input type="text" [(ngModel)]="produto.tamanho" class="form-control" name="tamanho" placeholder="P,M,G,500ml,1L...">
       </div>
       <div class="p-2">
-        <label for="formGroupExampleInput2" class="form-label">img</label>
-        <input type="text" [(ngModel)]="produto.imagem" class="form-control" name="img" placeholder="12...">
+        <label for="formGroupExampleInput2" class="form-label">Imagem</label>
+        <input type="text" [(ngModel)]="produto.imagem" class="form-control" name="img" placeholder="Link do Endereço da Imagem">
       </div>
      
 
       <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary" *ngIf="modoEdit == false"(click)="salvar()">cadastrar</button>
-        <button type="submit" class="btn btn-primary" *ngIf="modoEdit == true" (click)="editar()">editar</button>
+        <button type="submit" class="btn btn-primary" *ngIf="modoEdit == false"(click)="salvar()">CADASTRAR</button>
+        <button type="submit" class="btn btn-primary" *ngIf="modoEdit == true" (click)="editar()">EDITAR</button>
       </div>
     </div>
 

@@ -34,12 +34,12 @@
             <img  class="imagemProd" src={{produto.imagem}}>
             <div class="nomeProd"> {{ produto.nome }}</div>
             <div class="precoProd"><strong>Preço: R$</strong> {{ produto.preco }}</div>
-            <div *ngIf="adminRota && !modoLancamento">
+            <div *ngIf="adminRota && !modoLancamento" class="divADM">
                 <button class="btn btn-outline-warning" id="editarButton" (click)="editar(modal2, produto, i)">Editar</button>
                 <button class="btn btn-outline-danger" (click)="deletar(produto.id)">Excluir</button>
             </div>
             <div>
-                <button type="button" class="btn btn-primary" (click)="detalhar(produto.id)">Detalhes</button>
+                <button type="button" class="btn btn-primary"  id="detalhesButton" (click)="detalhar(produto.id)">Detalhes</button>
             </div>
         </div>
     </div>
@@ -59,7 +59,6 @@
 </ng-template>
 <ng-template #modal2 let-modal>
 	<div class="modal-header" data-backdrop="false">
-		<h4 class="modal-title">Cadastro de Produto</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">

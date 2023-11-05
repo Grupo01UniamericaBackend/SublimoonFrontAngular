@@ -1,7 +1,0 @@
-export enum categoria{
-
-    CANECA= 'CANECA',
-    GARRAFINHA= 'GARRAFINHA',
-    CAMISETA=  'CAMISETA',
-    COPOTERMICO= 'COPOTERMICO' 
-}

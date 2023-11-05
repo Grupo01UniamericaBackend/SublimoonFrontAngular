@@ -15,7 +15,6 @@ const routes: Routes = [
     {path: "Cadproduto", component: ProdutoDetailsComponent},
     {path: "produto", component: ProdutoListComponent},
     {path: "detalhes:id", component: ProdutoDetalhadoComponent}
-    
   ]},
   {path: "cliente", component: IndexComponent, children:[
     {path: "produto", component: ProdutoListComponent}, 

@@ -1,0 +1,60 @@
+/* Definir a cor de fundo do corpo da página como azul claro */
+body {
+    background-color: #B0E0E6; /* Azul claro */
+}
+
+/* Estilizar o contêiner principal */
+.row {
+    margin-top: 20px;
+    background-color: #FFFFFF; /* Branco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilizar o título "produto-details works!" */
+p {
+    color: #FFFFFF; /* Branco */
+    background-color: #1E90FF; /* Azul médio */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilizar os rótulos das entradas de texto */
+label.form-label {
+    color: #1E90FF; /* Azul médio */
+}
+
+/* Estilizar as entradas de texto */
+input.form-control {
+    border: 1px solid #1E90FF; /* Azul médio */
+    border-radius: 5px;
+}
+
+/* Estilizar os campos select */
+select.form-select {
+    border: 1px solid #1E90FF; /* Azul médio */
+    border-radius: 5px;
+}
+
+/* Estilizar os botões */
+button.btn-primary {
+    background-color: #1E90FF; /* Azul médio */
+    color: #FFFFFF; /* Branco */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Estilizar os botões de edição e cadastro */
+button.btn-primary.btn-light {
+    background-color: #B0E0E6; /* Azul claro */
+    color: #1E90FF; /* Azul médio */
+}
+
+/* Espaçamento entre elementos */
+.p-2 {
+    margin-top: 10px;
+}

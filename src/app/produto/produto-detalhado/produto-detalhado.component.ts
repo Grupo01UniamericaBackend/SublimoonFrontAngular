@@ -13,12 +13,12 @@ export class ProdutoDetalhadoComponent {
   produtoService = inject(ProdutoService);
   produto: Produto = new Produto();
 
-  id: number = 0;
+  id: number = 0; 
 
   constructor(private route: ActivatedRoute){
 
     this.obterIDDaRota();
-    this.findById();
+    
   }
   findById(){
     this.produtoService.findById(this.id).subscribe({
@@ -36,21 +36,15 @@ export class ProdutoDetalhadoComponent {
   }
 
   obterIDDaRota() {
-
-    
-   /* this.route.paramMap.subscribe(params => {
-      if (params.has('id')) {
-         this.id = +params.get('id');
-        if (!isNaN(id)) {
-          console.log('ID do produto:', id);
-        } else {
-          console.log('O ID do produto na rota não é um número válido.');
-        }
-      } else {
-        console.log('ID do produto não encontrado na rota.');
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const idParam = params.get('id');
+      if (idParam !== null) {
+        this.id = +idParam; 
+        this.findById();
       }
-    });*/
-}
+    });
+  }
+  
 
 
 }

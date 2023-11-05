@@ -1,5 +1,24 @@
-<p>produto-detalhado works!</p>
-<img src={{produto.imagem}}>
-<div><strong>Nome:</strong> {{ produto.nome }}</div>
-<div ><strong>Detalhes:</strong> {{ produto.descricao }}</div>
-<div><strong>Preço:</strong> {{ produto.preco }}</div>
+<div class="product-details">
+
+<div class="product-image">
+    <img [src]="produto.imagem" alt="{{ produto.nome }}" class="product-image">
+  </div>
+  
+  
+    <div class="product-info">
+      <h2 class="product-name">{{ produto.nome }}</h2>
+      <p class="product-description">{{ produto.descricao }}</p>
+      <p class="product-price">Preço: R$ {{ produto.preco }}</p>
+      <div class="quantity-selector">
+        <label for="quantity">Quantidade:</label>
+        <select id="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <!-- Adicione mais opções de quantidade, se necessário -->
+        </select>
+      </div>
+      <button class="add-to-cart-button" >Adicionar ao Carrinho</button>
+    </div>
+  </div>
+  

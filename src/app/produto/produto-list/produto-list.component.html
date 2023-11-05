@@ -38,7 +38,7 @@
                 <button class="btn btn-outline-warning" id="editarButton" (click)="editar(modal2, produto, i)">Editar</button>
                 <button class="btn btn-outline-danger" (click)="deletar(produto.id)">Excluir</button>
             </div>
-            <div *ngIf="!adminRota">
+            <div>
                 <button type="button" class="btn btn-primary" (click)="detalhar(produto.id)">Detalhes</button>
             </div>
         </div>

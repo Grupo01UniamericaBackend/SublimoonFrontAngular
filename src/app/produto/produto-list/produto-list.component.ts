@@ -119,7 +119,7 @@ export class ProdutoListComponent {
   detalhar(id: number){
 
    
-      this.router.navigate(['cliente/detalhes', id]);
+      this.router.navigate(['admin/detalhes', id]);
    
     
   }

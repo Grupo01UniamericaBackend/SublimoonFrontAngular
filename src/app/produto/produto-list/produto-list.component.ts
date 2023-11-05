@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Produto } from 'src/app/models/produto';
 import { ProdutoService } from 'src/app/services/produto-service';
@@ -13,6 +14,8 @@ export class ProdutoListComponent {
   @Input() modoLancamento: boolean = false;
 
 
+  adminRota: boolean = false;
+
   lista:Produto[]=[];
   
   produtoEdicao: Produto = new Produto();
@@ -24,9 +27,9 @@ export class ProdutoListComponent {
 
   
 
-  constructor(){
+  constructor(private router: Router){
     this.listAll();
-  
+    this.verficarRota();
   }
 
   listAll(){
@@ -40,6 +43,19 @@ export class ProdutoListComponent {
         console.error(erro);
       }
     })
+  }
+
+  verficarRota(){
+
+    const rotaAtual = this.router.url;
+
+    if (rotaAtual === '/admin/produto') {
+      this.adminRota = true;
+    } else {
+      this.adminRota = false;
+    } 
+
+
   }
 
   adicionar(modal: any) {
@@ -91,6 +107,8 @@ export class ProdutoListComponent {
     this.modalRef = this.modalService.open(modal, { size: 'sm' });
   }
 
+  
+
   addOuEditarproduto(produto: Produto) {
 
     this.listAll();
@@ -98,8 +116,13 @@ export class ProdutoListComponent {
     this.modalService.dismissAll();
   }
 
+  detalhar(id: number){
 
-  lancamento(produto: Produto){
-    this.retorno.emit(produto);
+   
+      this.router.navigate(['cliente/detalhes', id]);
+   
+    
   }
+
+  
 }

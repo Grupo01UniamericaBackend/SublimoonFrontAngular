@@ -17,9 +17,9 @@ export class ClienteService {
         const list = `${this.API}/lista`;
         return this.http.get<Cliente[]>(list);
     }
-    findById(id: Number): Observable<Cliente[]> {
+    findById(id: Number): Observable<Cliente> {
         const list = `${this.API}/${id}`;
-        return this.http.get<Cliente[]>(list);
+        return this.http.get<Cliente>(list);
     }
         
     save(cliente: Cliente): Observable<Cliente> {

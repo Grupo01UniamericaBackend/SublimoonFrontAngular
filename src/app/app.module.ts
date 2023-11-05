@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login/login.component';
 import { CadloginComponent } from './login/cadlogin/cadlogin.component';
 import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
 import { ProdutoDetailsComponent } from './produto/produto-details/produto-details.component';
+import { ProdutoDetalhadoComponent } from './produto/produto-detalhado/produto-detalhado.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ProdutoDetailsComponent } from './produto/produto-details/produto-detai
     CadloginComponent,
     ProdutoListComponent,
     ProdutoDetailsComponent,
+    ProdutoDetalhadoComponent,
   ],
   imports: [
     BrowserModule,

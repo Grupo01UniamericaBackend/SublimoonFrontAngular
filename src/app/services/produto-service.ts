@@ -17,9 +17,9 @@ export class ProdutoService {
         const list = `${this.API}/lista`;
         return this.http.get<Produto[]>(list);
     }
-    findById(id: Number): Observable<Produto[]> {
+    findById(id: Number): Observable<Produto> {
         const list = `${this.API}/${id}`;
-        return this.http.get<Produto[]>(list);
+        return this.http.get<Produto>(list);
     }
         
     save(produto: Produto): Observable<any> {

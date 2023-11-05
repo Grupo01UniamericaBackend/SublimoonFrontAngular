@@ -52,18 +52,5 @@ export class ProdutoDetailsComponent {
     });
   }
 
-  imagem = '';
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
-    this.convertToBase64(file);
-  }
-
-  convertToBase64(file: File) {
-    const reader = new FileReader();
-    reader.onload = (event: any) => {
-      this.produto.imagem = event.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
 }
 

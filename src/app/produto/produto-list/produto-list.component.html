@@ -40,7 +40,8 @@
             </div>
             <div class="divAtos">
                 <button type="button" class="btn btn-primary"  id="detalhesButton" (click)="detalhar(produto.id)">Detalhes</button>
-                <img src="assets/contorno-em-forma-de-coracao.png" alt="" class="coracaoImg">
+                <img (click)="favoritar(produto)" *ngIf="!produto.ativo" src="assets/contorno-em-forma-de-coracao.png" alt="" class="coracaoImg">
+                <img (click)="desfavoritar(produto)" *ngIf="produto.ativo" src="assets/silhueta-em-forma-de-coracao.png" alt="" class="coracaoImg">
             </div>
         </div>
     </div>

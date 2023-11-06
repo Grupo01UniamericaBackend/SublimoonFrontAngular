@@ -9,6 +9,7 @@ import { ProdutoDetalhadoComponent } from './produto/produto-detalhado/produto-d
 import { ClienteComponent } from './cliente/cliente.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ProdutoCategoriaComponent } from './produto/produto-categoria/produto-categoria.component';
+import { FavoritosComponent } from './produto/favoritos/favoritos.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"login", pathMatch: 'full'},
@@ -25,7 +26,8 @@ const routes: Routes = [
     {path: "detalhes/:id", component: ProdutoDetalhadoComponent},
     {path: "dadosCliente", component: ClienteComponent},
     {path:"contato", component: ContatoComponent},
-    {path:"produto/:categoria",component: ProdutoCategoriaComponent}
+    {path:"produto/:categoria",component: ProdutoCategoriaComponent},
+    {path: "produto/favoritos", component: FavoritosComponent}
 
   ]}
 ];

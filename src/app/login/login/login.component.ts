@@ -32,11 +32,14 @@ export class LoginComponent {
       for (let cliente of this.lista) {
         if (this.senha == cliente.senha && this.nome == cliente.nome) {
           clienteEncontrado = true;
+          this.salvarCliente("cliente", cliente);
           break; // Para sair do loop depois de encontrar o cliente tomaaa
         }
       }
   
       if (clienteEncontrado) {
+        
+        
         alert("Bem-vindo(a) Cliente!!");
         this.roteador.navigate(['/cliente/produto']);
       } else {
@@ -57,6 +60,9 @@ export class LoginComponent {
       }
     })
 
+  }
+  salvarCliente(chave: string, cliente: Cliente): void {
+    localStorage.setItem(chave, JSON.stringify(cliente));
   }
 
 }

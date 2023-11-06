@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Categoria } from 'src/app/enums/categoria';
 import { Favorito } from 'src/app/models/favorito';
@@ -17,10 +17,11 @@ export class ProdutoListComponent {
 
   adminRota: boolean = false;
 
-  categoriaSelecionada: Categoria | undefined;
+  categoriaSelecionada: String = ''; 
 
   lista:Produto[]=[];
-  
+  listaNova:Produto[]=[];
+
   favorito: Favorito = new Favorito();
   produtoEdicao: Produto = new Produto();
   indiceEdicao!: number;
@@ -31,9 +32,10 @@ export class ProdutoListComponent {
 
   
 
-  constructor(private router: Router){
+  constructor(private router: Router, private route: ActivatedRoute){
     this.listAll();
     this.verficarRota();
+    this.list();
   }
 
   listAll(){
@@ -124,7 +126,7 @@ export class ProdutoListComponent {
       this.router.navigate(['admin/detalhes', id]);
   }
 
-  selecionarCategoria(categoria: string) {
+ /* selecionarCategoria(categoria: string) {
     this.categoriaSelecionada = categoria as Categoria; 
     this.listarProdutosPorCategoria();
   }
@@ -140,6 +142,30 @@ export class ProdutoListComponent {
         }
       });
     }
+  }*/
+  list() {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+     
+      const CatParam = params.get('categoria');
+      if (CatParam !== null) {
+        this.listaNova = [];
+        this.categoriaSelecionada = CatParam; 
+
+        for(let produto of this.lista){
+         
+          if(produto.categoria === this.categoriaSelecionada){
+            this.listaNova.push(produto);
+
+          }
+        }
+        this.lista = this.listaNova;
+        
+      } else{
+      
+        this.listAll();
+    }
+    });
+   
   }
   
 }

@@ -73,3 +73,41 @@ h1{
     transition: 0.5s;
     scale: 120%;
 }
+
+/* Estilo para a barra de pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 10px 0; /* Espaço acima e abaixo da barra de pesquisa */
+}
+
+.search-bar input {
+    flex-grow: 1; /* A barra de pesquisa ocupa todo o espaço disponível */
+    margin-right: 10px; /* Espaço à direita do campo de pesquisa */
+}
+
+/* Estilo para o botão "Limpar Filtro" */
+.btn-primary {
+    background-color: #153b75;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #2669c7; /* Cor de destaque ao passar o mouse */
+}
+
+/* Estilo para o botão "Limpar Filtro" ao passar o mouse */
+.btn-primary:hover {
+    background-color: #2669c7;
+}
+
+/* Estilo para a borda da barra de pesquisa */
+.borda {
+    border: 2px solid #2669c7;
+    border-radius: 5px;
+    padding: 10px;
+}
+

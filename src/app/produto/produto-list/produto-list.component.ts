@@ -21,6 +21,8 @@ export class ProdutoListComponent {
 
   lista:Produto[]=[];
   listaNova:Produto[]=[];
+ 
+  termoPesquisa: string = '';
 
   favorito: Favorito = new Favorito();
   produtoEdicao: Produto = new Produto();
@@ -35,6 +37,7 @@ export class ProdutoListComponent {
   constructor(private router: Router, private route: ActivatedRoute){
     this.listAll();
     this.verficarRota();
+    this.carregarProdutos();
 
   }
 
@@ -124,6 +127,27 @@ export class ProdutoListComponent {
   detalhar(id: number){
 
       this.router.navigate(['admin/detalhes', id]);
+  }
+
+  carregarProdutos() {
+    this.produtoService.listAll().subscribe((produtos) => {
+      this.lista = produtos;
+    });
+  }
+
+  filtrarProdutos() {
+    if (this.termoPesquisa) {
+      this.lista = this.lista.filter((produto) =>
+        produto.nome.toLowerCase().includes(this.termoPesquisa.toLowerCase())
+      );
+    } else {
+      this.carregarProdutos();
+    }
+  }
+
+  limparFiltro() {
+    this.termoPesquisa = '';
+    this.carregarProdutos();
   }
 
  /* selecionarCategoria(categoria: string) {

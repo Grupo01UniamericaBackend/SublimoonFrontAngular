@@ -13,6 +13,7 @@ import { CadloginComponent } from './login/cadlogin/cadlogin.component';
 import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
 import { ProdutoDetailsComponent } from './produto/produto-details/produto-details.component';
 import { ProdutoDetalhadoComponent } from './produto/produto-detalhado/produto-detalhado.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ProdutoDetalhadoComponent } from './produto/produto-detalhado/produto-d
     ProdutoListComponent,
     ProdutoDetailsComponent,
     ProdutoDetalhadoComponent,
+    ClienteComponent,
   ],
   imports: [
     BrowserModule,

@@ -64,3 +64,12 @@ h1{
 .divADM{
     margin-bottom: 1vw;
 }
+.coracaoImg{
+    width: 2.8vw;
+    cursor: pointer;
+    margin-left: 5vw;
+}
+.coracaoImg:hover{
+    transition: 0.5s;
+    scale: 120%;
+}

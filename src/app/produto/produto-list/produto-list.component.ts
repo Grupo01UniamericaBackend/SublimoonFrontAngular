@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Categoria } from 'src/app/enums/categoria';
+import { Favorito } from 'src/app/models/favorito';
 import { Produto } from 'src/app/models/produto';
 import { ProdutoService } from 'src/app/services/produto-service';
 
@@ -13,11 +15,13 @@ export class ProdutoListComponent {
   @Output() retorno = new EventEmitter<Produto>();
   @Input() modoLancamento: boolean = false;
 
-
   adminRota: boolean = false;
+
+  categoriaSelecionada: Categoria | undefined;
 
   lista:Produto[]=[];
   
+  favorito: Favorito = new Favorito();
   produtoEdicao: Produto = new Produto();
   indiceEdicao!: number;
 
@@ -107,7 +111,6 @@ export class ProdutoListComponent {
     this.modalRef = this.modalService.open(modal, { size: 'sm' });
   }
 
-  
 
   addOuEditarproduto(produto: Produto) {
 
@@ -118,11 +121,25 @@ export class ProdutoListComponent {
 
   detalhar(id: number){
 
-   
       this.router.navigate(['admin/detalhes', id]);
-   
-    
   }
 
+  selecionarCategoria(categoria: string) {
+    this.categoriaSelecionada = categoria as Categoria; 
+    this.listarProdutosPorCategoria();
+  }
+
+  listarProdutosPorCategoria() {
+    if (this.categoriaSelecionada) {
+      this.produtoService.listarPorCategoria(this.categoriaSelecionada).subscribe({
+        next: (produtos) => {
+          this.lista = produtos;
+        },
+        error: (erro) => {
+          console.error(erro);
+        }
+      });
+    }
+  }
   
 }

@@ -1,6 +1,6 @@
 <div class="divHeader">
     <nav>
-        <img src="assets/iconeSublimoon.png" alt="Sublimoon" class="imgLogo">
+        <img src="assets/iconeSublimoon.png" alt="Sublimoon" class="imgLogo" routerLink="/cliente/produto">
         <div class="divPlaceholder">
             <input class="form-control me-2" type="search" placeholder="🔍 Buscar" aria-label="Search" id="barraPesquisa">
         </div>
@@ -10,11 +10,10 @@
         <p class="categ">Copos-Térmicos</p>
         <p class="icons">🛒</p>
         <p class="icons">💙</p>
-        <p  id="iconP">👤</p>
+        <p  id="iconP" routerLink="/cliente/dadosCliente">👤</p>
         <select name="" id="selectOpc">
             <option value="" class="dropdown-item">Opções</option>
-            <option value="" class="dropdown-item">Estoque</option>
-            <option value="" class="dropdown-item">Sair</option>
+            <option routerLink="/login" value="" class="dropdown-item" >Sair</option>
         </select>
     </nav>
     <div class="barra"></div>

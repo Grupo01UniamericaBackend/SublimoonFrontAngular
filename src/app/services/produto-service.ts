@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
 import { Observable } from "rxjs";
 import { Produto } from "../models/produto";
+import { Categoria } from "../enums/categoria";
 
 @Injectable({
     providedIn: 'root'
@@ -35,4 +36,9 @@ export class ProdutoService {
         const list = `${this.API}/${id}`;
         return this.http.delete<any>(list);
     }
+
+    listarPorCategoria(categoria: Categoria): Observable<Produto[]> {
+        const url = `${this.API}/listaPorCategoria/${categoria}`;
+        return this.http.get<Produto[]>(url);
+      }
 }

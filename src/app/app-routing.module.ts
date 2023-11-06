@@ -6,6 +6,7 @@ import { CadloginComponent } from './login/cadlogin/cadlogin.component';
 import { ProdutoDetailsComponent } from './produto/produto-details/produto-details.component';
 import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
 import { ProdutoDetalhadoComponent } from './produto/produto-detalhado/produto-detalhado.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"login", pathMatch: 'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   ]},
   {path: "cliente", component: IndexComponent, children:[
     {path: "produto", component: ProdutoListComponent}, 
-    {path: "detalhes/:id", component: ProdutoDetalhadoComponent}
+    {path: "detalhes/:id", component: ProdutoDetalhadoComponent},
+    {path: "dadosCliente", component: ClienteComponent}
 
   ]}
 ];

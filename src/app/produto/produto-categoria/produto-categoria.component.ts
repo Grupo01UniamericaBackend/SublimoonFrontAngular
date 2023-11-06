@@ -126,23 +126,6 @@ export class ProdutoCategoriaComponent {
       this.router.navigate(['admin/detalhes', id]);
   }
 
- /* selecionarCategoria(categoria: string) {
-    this.categoriaSelecionada = categoria as Categoria; 
-    this.listarProdutosPorCategoria();
-  }
-
-  listarProdutosPorCategoria() {
-    if (this.categoriaSelecionada) {
-      this.produtoService.listarPorCategoria(this.categoriaSelecionada).subscribe({
-        next: (produtos) => {
-          this.lista = produtos;
-        },
-        error: (erro) => {
-          console.error(erro);
-        }
-      });
-    }
-  }*/
   list() {
     this.route.paramMap.subscribe((params: ParamMap) => {
      

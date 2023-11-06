@@ -24,7 +24,10 @@ export class ProdutoListComponent {
   lista:Produto[]=[];
   listaNova:Produto[]=[];
  
- 
+
+
+  termoPesquisa: string = '';
+
 
   favorito: Favorito = new Favorito();
   produtoEdicao: Produto = new Produto();
@@ -40,6 +43,7 @@ export class ProdutoListComponent {
   constructor(private router: Router, private route: ActivatedRoute){
     this.listAll();
     this.verficarRota();
+    this.carregarProdutos();
 
   }
 
@@ -143,6 +147,7 @@ export class ProdutoListComponent {
       this.router.navigate(['admin/detalhes', id]);
   }
 
+
   favoritar(produto: Produto){
     const lista: Produto[] = this.recuperarFavorito("lista");
     const cliente: Cliente = this.recuperarCliente("cliente");
@@ -177,6 +182,32 @@ export class ProdutoListComponent {
   salvarFavoritos(chave: string, favorito: Produto[]): void {
     localStorage.setItem(chave, JSON.stringify(favorito));
   }
+  carregarProdutos() {
+    this.produtoService.listAll().subscribe((produtos) => {
+      this.lista = produtos;
+    });
+  }
+
+  filtrarProdutos() {
+    if (this.termoPesquisa) {
+      this.lista = this.lista.filter((produto) =>
+        produto.nome.toLowerCase().includes(this.termoPesquisa.toLowerCase())
+      );
+    } else {
+      this.carregarProdutos();
+    }
+  }
+
+  limparFiltro() {
+    this.termoPesquisa = '';
+    this.carregarProdutos();
+  }
+
+ /* selecionarCategoria(categoria: string) {
+    this.categoriaSelecionada = categoria as Categoria; 
+    this.listarProdutosPorCategoria();
+
+  }*/
 
   recuperarCliente(chave: string): Cliente {
     const item = localStorage.getItem(chave);
@@ -186,4 +217,5 @@ export class ProdutoListComponent {
     const item = localStorage.getItem(chave);
     return item ? JSON.parse(item) : null;
   }
+
 }

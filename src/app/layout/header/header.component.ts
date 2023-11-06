@@ -13,7 +13,6 @@ export class HeaderComponent {
     
   }
   categorias(categoria: string){
-    console.log(categoria);
-    this.router.navigate(['cliente/produto', categoria]);
+    this.router.navigate(['cliente/produto/', categoria]);
 }
 }

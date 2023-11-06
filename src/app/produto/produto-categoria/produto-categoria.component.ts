@@ -7,11 +7,12 @@ import { Produto } from 'src/app/models/produto';
 import { ProdutoService } from 'src/app/services/produto-service';
 
 @Component({
-  selector: 'app-produto-list',
-  templateUrl: './produto-list.component.html',
-  styleUrls: ['./produto-list.component.scss']
+  selector: 'app-produto-categoria',
+  templateUrl: './produto-categoria.component.html',
+  styleUrls: ['./produto-categoria.component.scss']
 })
-export class ProdutoListComponent {
+export class ProdutoCategoriaComponent {
+
   @Output() retorno = new EventEmitter<Produto>();
   @Input() modoLancamento: boolean = false;
 
@@ -33,9 +34,8 @@ export class ProdutoListComponent {
   
 
   constructor(private router: Router, private route: ActivatedRoute){
-    this.listAll();
     this.verficarRota();
-
+    this.list();
   }
 
   listAll(){
@@ -143,6 +143,75 @@ export class ProdutoListComponent {
       });
     }
   }*/
+  list() {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+     
+      const CatParam = params.get('categoria');
+      console.log(CatParam);
+      if (CatParam !== null) {
+        this.listaNova = [];
+        this.categoriaSelecionada = CatParam; 
 
-  
+        for(let produto of this.lista){
+         
+          if(produto.categoria === this.categoriaSelecionada){
+            this.listaNova.push(produto);
+
+          }
+        }
+        this.lista = this.listaNova;
+        if(this.categoriaSelecionada == 'COPOTERMICO'){
+        this.produtoService.listarPorCategoria(Categoria.COPOTERMICO).subscribe({
+          next: lista =>{
+            this.lista = lista;
+          },
+          error: erro => {
+            alert("Algo deu errado!");
+            console.error(erro);
+          }
+        })
+      }
+      if(this.categoriaSelecionada == 'CANECA'){
+        this.produtoService.listarPorCategoria(Categoria.CANECA).subscribe({
+          next: lista =>{
+            this.lista = lista;
+          },
+          error: erro => {
+            alert("Algo deu errado!");
+            console.error(erro);
+          }
+        })
+      }
+      if(this.categoriaSelecionada == 'CAMISETA'){
+        this.produtoService.listarPorCategoria(Categoria.CAMISETA).subscribe({
+          next: lista =>{
+            this.lista = lista;
+          },
+          error: erro => {
+            alert("Algo deu errado!");
+            console.error(erro);
+          }
+        })
+      }
+      if(this.categoriaSelecionada == 'GARRAFINHA'){
+        this.produtoService.listarPorCategoria(Categoria.GARRAFINHA).subscribe({
+          next: lista =>{
+            this.lista = lista;
+          },
+          error: erro => {
+            alert("Algo deu errado!");
+            console.error(erro);
+          }
+        })
+      }
+
+        
+      } else{
+      
+        this.listAll();
+    }
+    });
+   
+  }
+
 }

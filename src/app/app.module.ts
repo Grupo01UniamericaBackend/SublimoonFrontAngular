@@ -15,6 +15,7 @@ import { ProdutoDetailsComponent } from './produto/produto-details/produto-detai
 import { ProdutoDetalhadoComponent } from './produto/produto-detalhado/produto-detalhado.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ContatoComponent } from './contato/contato.component';
+import { ProdutoCategoriaComponent } from './produto/produto-categoria/produto-categoria.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ContatoComponent } from './contato/contato.component';
     ProdutoDetalhadoComponent,
     ClienteComponent,
     ContatoComponent,
+    ProdutoCategoriaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,75 @@
+
+.retangulos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5vw;
+    margin-left: 1vw;
+}
+
+.retangulo {
+    border: 4px solid #2669c7;
+    box-shadow: 0.8rem 0.8rem 1.2rem rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    margin: 10px;
+    width: 20vw;
+    border-radius: 8px;
+}
+.nomeProd{
+    color: black;
+    font-size: 1.3vw;
+}
+.precoProd{
+    color: #153b75;
+    font-size: 1.2vw;
+    margin-bottom: 2vh;
+}
+.linha{
+    height: 10vh;
+    // background-color: rgb(234, 123, 234);
+     color: #153b75;
+     display: flex;
+     align-items: center;
+     margin-top: 4vh;
+     margin-bottom: 5vh;
+     margin-left: 2vw;
+}
+
+h1{
+    font-weight: 600;
+    font-size: 4vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#btn{
+    color: white;
+    font-size: 3vw;
+    font-weight: 600;
+    margin-left: 4vw;
+}
+
+.imagemProd{
+    min-width: 18vw;
+    width: 18vw;
+    border-radius: 4px;
+    margin-bottom: 2vh;
+}
+
+#carousel{
+    margin-top: 2vh;
+}
+
+#editarButton{
+    margin-right: 1.5vw;
+}
+.divADM{
+    margin-bottom: 1vw;
+}
+.coracaoImg{
+    width: 2.8vw;
+    cursor: pointer;
+    margin-left: 5vw;
+}
+.coracaoImg:hover{
+    transition: 0.5s;
+    scale: 120%;
+}

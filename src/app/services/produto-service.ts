@@ -38,7 +38,7 @@ export class ProdutoService {
     }
 
     listarPorCategoria(categoria: Categoria): Observable<Produto[]> {
-        const url = `${this.API}/listaPorCategoria/${categoria}`;
-        return this.http.get<Produto[]>(url);
+        const url = `${this.API}/categoria/${categoria}`;
+        return this.http.get<Produto[]>(url);   
       }
 }

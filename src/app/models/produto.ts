@@ -5,7 +5,7 @@ import { AbstratcEntity } from "./abstratc-entity";
 export class Produto extends AbstratcEntity {
 
     nome!:string;
-    categoria!: Categoria;
+    categoria!: string;
     cor!: Cor;
     descricao!: string;
     imagem!: string;

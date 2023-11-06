@@ -1,0 +1,40 @@
+
+
+.contact-container {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    min-height: 61vh;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-list li {
+    margin: 10px 0;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.contact-list img {
+    width: 30px;
+    margin-right: 10px;
+}

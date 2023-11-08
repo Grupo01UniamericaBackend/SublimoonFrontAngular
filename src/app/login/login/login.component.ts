@@ -37,7 +37,7 @@ export class LoginComponent {
       }
   
       if (clienteEncontrado) {
-        alert("Bem-vindo(a) Cliente!!");
+        alert("Bem-vindo(a)!!");
         this.roteador.navigate(['/cliente/produto']);
       } else {
         alert("Nome ou senha incorretos!!");

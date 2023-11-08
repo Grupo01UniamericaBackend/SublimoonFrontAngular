@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cliente } from '../models/cliente';
 
 @Component({
   selector: 'app-cliente',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class ClienteComponent {
 
+  cliente = new Cliente();
+
+  constructor(){
+    this.listarCliente();
+  }
+  listarCliente(){
+    const cliente: Cliente = this.recuperarCliente("cliente");
+    this.cliente = cliente;
+    console.log("PASSOU", this.cliente);
+  }
+
+  recuperarCliente(chave: string): Cliente {
+    const item = localStorage.getItem(chave);
+    return item ? JSON.parse(item) : null;
+  }
 }

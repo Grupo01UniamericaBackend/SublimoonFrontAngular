@@ -64,7 +64,6 @@ export class ProdutoListComponent {
       this.adminRota = false;
     } 
 
-
   }
 
   adicionar(modal: any) {
@@ -88,7 +87,6 @@ export class ProdutoListComponent {
         this.listAll();
       },
       error: erro => { // QUANDO DÁ ERRO
-        alert('Observe o erro no console!');
         console.error(erro);
       }
     });
@@ -149,24 +147,6 @@ export class ProdutoListComponent {
     this.termoPesquisa = '';
     this.carregarProdutos();
   }
-
- /* selecionarCategoria(categoria: string) {
-    this.categoriaSelecionada = categoria as Categoria; 
-    this.listarProdutosPorCategoria();
-  }
-
-  listarProdutosPorCategoria() {
-    if (this.categoriaSelecionada) {
-      this.produtoService.listarPorCategoria(this.categoriaSelecionada).subscribe({
-        next: (produtos) => {
-          this.lista = produtos;
-        },
-        error: (erro) => {
-          console.error(erro);
-        }
-      });
-    }
-  }*/
 
   
 }

@@ -10,6 +10,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ProdutoCategoriaComponent } from './produto/produto-categoria/produto-categoria.component';
 import { FavoritosComponent } from './produto/favoritos/favoritos.component';
+import { CarrinholistComponent } from './carrinho/carrinholist/carrinholist.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"login", pathMatch: 'full'},
@@ -27,7 +28,8 @@ const routes: Routes = [
     {path: "dadosCliente", component: ClienteComponent},
     {path:"contato", component: ContatoComponent},
     {path:"produto/:categoria",component: ProdutoCategoriaComponent},
-    {path: "produto/favoritos", component: FavoritosComponent}
+    {path: "produto/favoritos", component: FavoritosComponent},
+    {path: "carrinho", component: CarrinholistComponent}
 
 
   ]}

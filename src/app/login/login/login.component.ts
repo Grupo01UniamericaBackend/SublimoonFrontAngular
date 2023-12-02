@@ -26,7 +26,7 @@ export class LoginComponent {
   
   logar() {
     if (this.nome == "AdmUserPred123" && this.senha == "123senhaAdm321") {
-      this.roteador.navigate(['/admin']);
+      this.roteador.navigate(['/admin/produto']);
     } else {
       let clienteEncontrado = false;
       for (let cliente of this.lista) {

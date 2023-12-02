@@ -7,6 +7,6 @@ export class Item extends AbstratcEntity {
     quantidade!: number;
     valor!: number;
     valorUnit!: number;
-    valorTotal =  this.valorUnit * this.quantidade;
+    valorTotal!:number;
 
 }

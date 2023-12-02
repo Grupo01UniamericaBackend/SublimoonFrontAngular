@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Categoria } from 'src/app/enums/categoria';
@@ -7,6 +7,9 @@ import { Favorito } from 'src/app/models/favorito';
 import { Produto } from 'src/app/models/produto';
 import { FavoritoService } from 'src/app/services/favorito-service';
 import { ProdutoService } from 'src/app/services/produto-service';
+import { NgbCarousel, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-produto-list',
@@ -49,7 +52,7 @@ export class ProdutoListComponent {
 
   listAll(){
 
-    const listaFavoritos: Produto[] = this.recuperarFavorito("lista");
+   
     this.produtoService.listAll().subscribe({
       next: lista =>{
         this.lista = lista;
@@ -59,17 +62,6 @@ export class ProdutoListComponent {
         console.error(erro);
       }
     })
-
-    for(let produto of this.lista){
-      for(let favorito of listaFavoritos){
-
-        if(produto.id == favorito.id){
-
-            produto.ativo = true;
-            console.log(produto);
-        }
-      }
-    }
   }
 
   verficarRota(){
@@ -115,6 +107,7 @@ export class ProdutoListComponent {
 
     this.listAll();
     this.modalService.dismissAll();
+    console.log("modal doida");
 
   }
 
@@ -138,6 +131,8 @@ export class ProdutoListComponent {
     this.listAll();
 
     this.modalService.dismissAll();
+
+    console.log("addouEditarProduto");
   }
 
   detalhar(id: number){
@@ -219,5 +214,39 @@ export class ProdutoListComponent {
     return item ? JSON.parse(item) : null;
   }
 
+  images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
+	paused = false;
+	unpauseOnArrow = false;
+	pauseOnIndicator = false;
+	pauseOnHover = true;
+	pauseOnFocus = true;
+
+	@ViewChild('carousel', { static: true })
+  carousel!: NgbCarousel;
+
+	togglePaused() {
+		if (this.paused) {
+			this.carousel.cycle();
+		} else {
+			this.carousel.pause();
+		}
+		this.paused = !this.paused;
+	}
+
+	onSlide(slideEvent: NgbSlideEvent) {
+		if (
+			this.unpauseOnArrow &&
+			slideEvent.paused &&
+			(slideEvent.source === NgbSlideEventSource.ARROW_LEFT || slideEvent.source === NgbSlideEventSource.ARROW_RIGHT)
+		) {
+			this.togglePaused();
+		}
+		if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgbSlideEventSource.INDICATOR) {
+			this.togglePaused();
+		}
+	}
 }
+
+
 

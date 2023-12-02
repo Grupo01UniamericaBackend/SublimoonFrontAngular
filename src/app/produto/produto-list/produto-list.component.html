@@ -6,24 +6,47 @@
   
 
 <div class="borda">
-    <div class="carousel" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/banner-subli-certo.png" class="d-block w-100"  alt="">
+    <ngb-carousel
+	#carousel
+	[interval]="1000"
+	[pauseOnHover]="pauseOnHover"
+	[pauseOnFocus]="pauseOnFocus"
+	(slide)="onSlide($event)"
+>
+        <ng-template ngbSlide *ngFor="let img of images; index as i">
+            <div class="carousel-caption">
+                <h3>My slide {{i + 1}} title</h3>
             </div>
-            <div class="carousel-item">
-                <img src="assets/carrosel-Frete-Gratis.png" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+            <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+                <div class="picsum-img-wrapper">
+                    <img [src]="img" alt="My image {{i + 1}} description" />
+                </div>
+            </a>
+        </ng-template>
+    </ngb-carousel>
+
+    <hr />
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="pauseOnHover" [(ngModel)]="pauseOnHover" />
+        <label class="form-check-label" for="pauseOnHover">Pause on hover</label>
     </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="pauseOnFocus" [(ngModel)]="pauseOnFocus" />
+        <label class="form-check-label" for="pauseOnFocus">Pause on focus</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="unpauseOnArrow" [(ngModel)]="unpauseOnArrow" />
+        <label class="form-check-label" for="unpauseOnArrow">Unpause when clicking on arrows</label>
+    </div>
+    <div class="form-check">
+       <input type="checkbox" class="form-check-input" id="pauseOnIndicator" [(ngModel)]="pauseOnIndicator" />
+        <label class="form-check-label" for="pauseOnIndicator">Pause when clicking on navigation indicator</label>
+    </div>
+    <button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
+            {{paused ? 'Cycle' : 'Pause' }}
+    
+    </button>
+    
 
     <div class="form-group search-bar">
         <input type="text" [(ngModel)]="termoPesquisa" (input)="filtrarProdutos()" class="form-control" placeholder="Pesquisar por nome do produto">
@@ -49,10 +72,10 @@
             <div class="divAtos">
                 <button type="button" class="btn btn-primary"  id="detalhesButton" (click)="detalhar(produto.id)">Detalhes</button>
 
-            <!-- <img src="assets/contorno-em-forma-de-coracao.png" alt="" class="coracaoImg"> -->
+            <!-- <img src="assets/contorno-em-forma-de-coracao.png" alt="" class="coracaoImg">
 
                 <img (click)="favoritar(produto)" *ngIf="!produto.ativo" src="assets/contorno-em-forma-de-coracao.png" alt="" class="coracaoImg">
-                <img (click)="desfavoritar(produto)" *ngIf="produto.ativo" src="assets/silhueta-em-forma-de-coracao.png" alt="" class="coracaoImg">
+                <img (click)="desfavoritar(produto)" *ngIf="produto.ativo" src="assets/silhueta-em-forma-de-coracao.png" alt="" class="coracaoImg"> -->
             </div>
         </div>
     </div>

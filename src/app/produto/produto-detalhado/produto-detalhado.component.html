@@ -11,7 +11,20 @@
           <p class="product-size">Tamanho:  {{produto.tamanho}}</p>
           <p class="product-color">Cor:  {{produto.cor}}</p>
 
-          <button routerLink="/cliente/contato" class="add-to-cart-button" >Entrar em contato</button>
+          <button  (click)="adicionarCarrinho()"  class="add-to-cart-button" >Adicionar ao carrinho</button>
+         
+            <div class="container mt-5">
+            <div class="input-group">
+              <input type="number" class="form-control" id="numero" value="0" [(ngModel)]="quantidade" min="0">
+              <div class="input-group-btn">
+                <button class="btn btn-secondary" type="button" (click)="aumentarNumero()">+</button>
+                <button class="btn btn-secondary" type="button" (click)="diminuirNumero()">-</button>
+              </div>
+            </div>
+          </div>
       </div>
   </div>
+  
+
+  
   

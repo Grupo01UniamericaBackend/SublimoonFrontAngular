@@ -17,6 +17,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ProdutoCategoriaComponent } from './produto/produto-categoria/produto-categoria.component';
 import { FavoritosComponent } from './produto/favoritos/favoritos.component';
+import { CarrinholistComponent } from './carrinho/carrinholist/carrinholist.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { FavoritosComponent } from './produto/favoritos/favoritos.component';
     ContatoComponent,
     ProdutoCategoriaComponent,
     FavoritosComponent,
+    CarrinholistComponent,
   ],
   imports: [
     BrowserModule,

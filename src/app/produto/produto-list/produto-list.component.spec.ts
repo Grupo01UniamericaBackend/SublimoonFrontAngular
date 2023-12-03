@@ -4,6 +4,7 @@ import { ProdutoListComponent } from './produto-list.component';
 import { ProdutoService } from 'src/app/services/produto-service';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 const activatedRouteMock = {
   snapshot: {
@@ -39,4 +40,25 @@ describe('ProdutoListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('deve abrir a modal pra criar produto', () => {
+    spyOn(component.modalService, 'open');
+    
+    component.adicionar({});
+    
+    expect(component.modalService.open).toHaveBeenCalledOnceWith({}, { size: 'lg' });
+  });
+
+  it('deleta fi', () => {
+    spyOn(component.produtoService, 'delete').and.returnValue(of([]));
+
+    const produto = { id: 1, nome: 'Produto Teste', preco: 10.0 };
+
+    component.deletar(produto.id);
+
+    expect(component.produtoService.delete).toHaveBeenCalledWith(produto.id);
+    expect(component.lista).toEqual([]); 
+  });
+
+  
 });

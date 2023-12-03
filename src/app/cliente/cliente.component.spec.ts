@@ -25,7 +25,7 @@ describe('ClienteComponent', () => {
   beforeEach(() => {
     const cliente = new Cliente();
     cliente.id = 1;
-    cliente.nome = 'ana';
+    cliente.nome = 'teste';
     cliente.telefone = '45-9999-4533';
     cliente.cpf= '06773080940'
   
@@ -37,9 +37,5 @@ describe('ClienteComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
- 
-
-
 
 });

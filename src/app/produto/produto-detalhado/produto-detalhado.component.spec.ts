@@ -4,6 +4,7 @@ import { ProdutoDetalhadoComponent } from './produto-detalhado.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, convertToParamMap } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('ProdutoDetalhadoComponent', () => {
   let component: ProdutoDetalhadoComponent;
@@ -38,5 +39,41 @@ describe('ProdutoDetalhadoComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('deve setar id corretinho para route params', () => {
+    expect(component.id).toEqual(0);
+  });
+
+  it('diminuir quantidade', () => {
+    component.quantidade = 3;
+
+    component.diminuirNumero();
+
+    expect(component.quantidade).toEqual(2);
+  });
+
+  it('nao deve diminuir quantidade abaixo de 0', () => {
+    component.quantidade = 0;
+
+    component.diminuirNumero();
+
+    expect(component.quantidade).toEqual(0);
+  });
+
+  it('deve adicionar ao carrinho corretamente', () => {
+    spyOn(component, 'salvarProduto');
+    component.adicionarCarrinho();
+
+    expect(component.salvarProduto).toHaveBeenCalled();
+  });
+
+  it('nao deve aumentar quantidade acima do estoque', () => {
+    component.quantidade = 5;
+    component.produto.quantidade = 4; 
+
+    component.aumentarNumero();
+
+    expect(component.quantidade).toEqual(4);
   });
 });

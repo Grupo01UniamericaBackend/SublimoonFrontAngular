@@ -80,10 +80,10 @@ export class CarrinholistComponent {
   enviarPedido(): void {
     const nomeEmpresa: string = "SUBLIMOON";
     const numeroWhatsApp: string = "5545999568491";
-    const listaProdutos: string = this.lista.map(item => `${item.produto.nome} (${item.quantidade})`).join('\n');
-    const valorTotal: string = "Valor Total do Pedido";
+    const listaProdutos: string = this.lista.map(item => `nome: ${item.produto.nome} quantidade: (${item.quantidade})`).join('\n');
+    const valorTotal: string = "Valor Total do Pedido"; // aqui acho melhor a Demandante falar depois de confirmar os itens
   
-    const mensagem: string = `Olá, gostaria de fazer um pedido:\n\n${listaProdutos}\n\nValor Total: R$ ${valorTotal}`;
+    const mensagem: string = `Olá !! Gostaria de fazer um pedido:\n\n${listaProdutos}\n\nValor Total: R$ ${valorTotal}`;
   
     const mensagemEncoded: string = encodeURIComponent(mensagem);
   

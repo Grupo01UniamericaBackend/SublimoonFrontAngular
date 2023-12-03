@@ -12,7 +12,7 @@ class ActivatedRouteStub {
   paramMap = of({
     get: (param: string) => {
       if (param === 'categoria') {
-        return 'CANECA'; // Defina a categoria de teste
+        return 'CANECA'; 
       }
       return null;
     }

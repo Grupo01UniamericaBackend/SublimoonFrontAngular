@@ -1,4 +1,5 @@
 import { AbstratcEntity } from "./abstratc-entity";
+import { Carrinho } from "./carrinho";
 import { Envio } from "./envio";
 
 export class Pedido  extends AbstratcEntity{
@@ -7,6 +8,6 @@ export class Pedido  extends AbstratcEntity{
     pagamento!: string;
     endereco!: string;
     cep!: string;
-    carrinho!: string;
+    carrinho!: Carrinho;
     envio!: Envio;
 }

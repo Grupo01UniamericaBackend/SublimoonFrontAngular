@@ -4,6 +4,7 @@ import { ClienteComponent } from './cliente.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Cliente } from '../models/cliente';
+import { By } from '@angular/platform-browser';
 
 describe('ClienteComponent', () => {
   let component: ClienteComponent;
@@ -36,4 +37,9 @@ describe('ClienteComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+ 
+
+
+
 });

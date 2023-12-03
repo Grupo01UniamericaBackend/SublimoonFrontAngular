@@ -1,0 +1,61 @@
+/* Adicione estilos para o contêiner de retângulos */
+.retangulos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Adicione estilos para cada retângulo individual */
+  .retangulo {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .imagemProd {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+  }
+  
+  .nomeProd {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .quantidade {
+    margin-top: 5px;
+  }
+  
+  .input-group {
+    margin-top: 10px;
+  }
+  
+  .precoProd,
+  .precoTotalProd {
+    margin-top: 10px;
+  }
+  
+  .divAtos {
+    margin-top: 15px;
+  }
+  
+  #detalhesButton {
+    width: 100%;
+  }
+  
+  /* Adicione estilos para os botões + e - */
+  .btn-secondary {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  /* Adicione estilos para o número de input */
+  .form-control {
+    width: 60px;
+    text-align: center;
+  }
+  

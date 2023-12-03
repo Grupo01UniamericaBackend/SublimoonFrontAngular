@@ -1,7 +1,6 @@
-
+<h1>Seu carrinho:</h1>
 <div class="retangulos">
     <div class="retangulo" *ngFor="let item of lista;let i = index">
-        <p>teste</p>
         <img  class="imagemProd" src={{item.produto.imagem}}>
         <div class="nomeProd"> {{ item.produto.nome }}</div>
         <div class="quantidade"><strong>quantidade:</strong> {{ item.quantidade }}</div>
@@ -12,12 +11,11 @@
               <button class="btn btn-secondary" type="button" (click)="diminuirNumero(item)">-</button>
             </div>
           </div>
-        <div class="precoProd"><strong>Preço unitário: R$</strong> {{ item.valorUnit }}</div>
         <div class="precoTotalProd"><strong>Valor Total: R$</strong> {{ item.valorTotal }}</div>
         <div class="divAtos">
             <button type="button" class="btn btn-primary"  id="detalhesButton" (click)="remover(item)" >REMOVER ITEM</button>
         </div>
     </div>
-    <button (click)="enviarPedido()">Enviar Pedido via WhatsApp</button>
+    <button (click)="enviarPedido()" class="enviarClass">Enviar Pedido via WhatsApp</button>
 
 </div>

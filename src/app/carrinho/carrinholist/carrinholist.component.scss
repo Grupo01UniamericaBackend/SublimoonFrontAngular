@@ -4,11 +4,13 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-top: 30px;
   }
   
   /* Adicione estilos para cada retângulo individual */
   .retangulo {
-    border: 1px solid #ccc;
+    border: 5px solid #1962d0;
+    border-radius: 3px;
     padding: 15px;
     width: 250px;
     text-align: center;
@@ -58,4 +60,24 @@
     width: 60px;
     text-align: center;
   }
+
+  .enviarClass{
+    background-color: rgb(11, 243, 11);
+    color: white;
+    font-weight: 700;
+    font-size: 1.8vw;
+    border-radius: 8px;
+    max-height: 5vw;
+  }
+  .enviarClass:hover{
+    background-color: rgb(6, 198, 6);
+    font-size: 1.9vw;
+    transition: 0.7s;
+  }
   
+  h1{
+    margin-top: 20px;
+    margin-left:30px;
+    font-size: 4rem;
+    color: #1962d0;
+  }

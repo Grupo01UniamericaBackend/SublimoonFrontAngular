@@ -246,7 +246,13 @@ export class ProdutoListComponent {
 			this.togglePaused();
 		}
 	}
+
+  imagens = [
+    'assets/banner-subli-certo.png',
+    'assets/carrosel-Frete-Gratis.png'
+  ]
 }
+
 
 
 

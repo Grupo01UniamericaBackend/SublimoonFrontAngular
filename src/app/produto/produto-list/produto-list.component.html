@@ -2,20 +2,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-
-  
-
 <div class="borda">
     <ngb-carousel
 	#carousel
-	[interval]="1000"
+	[interval]="4000"
 	[pauseOnHover]="pauseOnHover"
 	[pauseOnFocus]="pauseOnFocus"
 	(slide)="onSlide($event)"
 >
-        <ng-template ngbSlide *ngFor="let img of images; index as i">
+        <ng-template ngbSlide *ngFor="let img of imagens; index as i">
             <div class="carousel-caption">
-                <h3>My slide {{i + 1}} title</h3>
             </div>
             <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
                 <div class="picsum-img-wrapper">
@@ -25,28 +21,7 @@
         </ng-template>
     </ngb-carousel>
 
-    <hr />
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="pauseOnHover" [(ngModel)]="pauseOnHover" />
-        <label class="form-check-label" for="pauseOnHover">Pause on hover</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="pauseOnFocus" [(ngModel)]="pauseOnFocus" />
-        <label class="form-check-label" for="pauseOnFocus">Pause on focus</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="unpauseOnArrow" [(ngModel)]="unpauseOnArrow" />
-        <label class="form-check-label" for="unpauseOnArrow">Unpause when clicking on arrows</label>
-    </div>
-    <div class="form-check">
-       <input type="checkbox" class="form-check-input" id="pauseOnIndicator" [(ngModel)]="pauseOnIndicator" />
-        <label class="form-check-label" for="pauseOnIndicator">Pause when clicking on navigation indicator</label>
-    </div>
-    <button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
-            {{paused ? 'Cycle' : 'Pause' }}
-    
-    </button>
-    
+    <hr /> 
 
     <div class="form-group search-bar">
         <input type="text" [(ngModel)]="termoPesquisa" (input)="filtrarProdutos()" class="form-control" placeholder="Pesquisar por nome do produto">

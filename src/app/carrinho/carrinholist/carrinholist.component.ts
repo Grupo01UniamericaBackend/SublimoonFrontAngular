@@ -77,4 +77,26 @@ export class CarrinholistComponent {
     localStorage.setItem(chave, JSON.stringify(itensSalvos));
     this.list();
   }
+
+  enviarPedido(): void {
+    // Substitua essas variáveis com as informações reais do seu carrinho
+    const nomeEmpresa: string = "SUBLIMOON";
+    const numeroWhatsApp: string = "5545999568491";
+    const listaProdutos: string = this.lista.map(item => `${item.produto.nome} (${item.quantidade})`).join('\n');
+    const valorTotal: string = "Valor Total do Pedido";
+  
+    // Construa a mensagem com as informações do carrinho
+    const mensagem: string = `Olá, gostaria de fazer um pedido:\n\n${listaProdutos}\n\nValor Total: R$ ${valorTotal}`;
+  
+    // Encode a mensagem para o formato de URL
+    const mensagemEncoded: string = encodeURIComponent(mensagem);
+  
+    // Construa o link do WhatsApp com a mensagem
+    const linkWhatsApp: string = `https://wa.me/${numeroWhatsApp}?text=${mensagemEncoded}`;
+  
+   
+    window.open(linkWhatsApp);
+    
+  }
+  
 }

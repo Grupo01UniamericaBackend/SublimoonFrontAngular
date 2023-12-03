@@ -37,15 +37,20 @@ export class ProdutoDetalhadoComponent {
     });
   }
 
+ 
   obterIDDaRota() {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      const idParam = params.get('id');
-      if (idParam !== null) {
-        this.id = +idParam; 
-        this.findById();
-      }
-    });
+    if (this.route.paramMap) {
+      this.route.paramMap.subscribe((params: ParamMap) => {
+        const idParam = params.get('id');
+        if (idParam !== null) {
+          this.id = +idParam; 
+          this.findById();
+        }
+      });
+    }
   }
+
+
 
   adicionarCarrinho(){
     this.item.produto = this.produto;

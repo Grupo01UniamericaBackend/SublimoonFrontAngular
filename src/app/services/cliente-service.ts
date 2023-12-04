@@ -9,7 +9,7 @@ import { Cliente } from "../models/cliente";
 
 export class ClienteService {
     
-    API: string = 'http://localhost:8081/api/cliente';
+    API: string = 'http://3.129.90.134:8081/api/cliente';
     http = inject(HttpClient);
 
 

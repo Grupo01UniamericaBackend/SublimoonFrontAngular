@@ -9,7 +9,7 @@ import { Pedido } from "../models/pedido";
 
 export class PedidoService {
     
-    API: string = 'http://localhost:8081/api/pedido';
+    API: string = 'http://3.129.90.134:8081/api/pedido';
     http = inject(HttpClient);
 
 

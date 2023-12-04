@@ -4,6 +4,7 @@ import { Categoria } from 'src/app/enums/categoria';
 import { Cor } from 'src/app/enums/cor';
 import { Pedido } from 'src/app/models/pedido';
 import { Produto } from 'src/app/models/produto';
+import { LoginService } from 'src/app/services/login.service';
 import { PedidoService } from 'src/app/services/pedido-service';
 import { ProdutoService } from 'src/app/services/produto-service';
 
@@ -26,6 +27,7 @@ export class ProdutoDetailsComponent {
   modalRef!: NgbModalRef;
   pedidosService = inject(PedidoService); 
   produtoService = inject(ProdutoService);
+
 
   constructor(){}
 
@@ -51,6 +53,7 @@ export class ProdutoDetailsComponent {
       }
     });
   }
+
 
 }
 

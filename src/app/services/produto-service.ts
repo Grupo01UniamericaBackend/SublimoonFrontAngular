@@ -10,7 +10,7 @@ import { Categoria } from "../enums/categoria";
 
 export class ProdutoService {
     
-    API: string = 'http://localhost:8081/api/produto';
+    API: string = 'http://3.129.90.134:8081/api/produto';
     http = inject(HttpClient);
 
 

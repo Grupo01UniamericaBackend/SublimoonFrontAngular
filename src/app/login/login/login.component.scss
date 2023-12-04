@@ -1,63 +1,46 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.container {
+    background-color: #ffffff;
+    padding-top: 50px;
 }
 
-.divLogin{
-    text-align: center; /* Centraliza o texto dentro do container */
-    background-color: #2669c7;
-    color: white;
-    height: 100vh;
-    margin: 0;
+.login-form {
+    background-color: #1e2a3a;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-form{
-    color:#000879;
-    background-color: white;
-    width: 40vw;
-    height: 90vh;
-    border-radius: 20px;
-    box-shadow: 0.8rem 0.8rem 1.2rem rgba(0, 0, 0, 0.6);
-}
-
-#senhaInput{
-    padding-top: 3rem;
-}
-.cadastrar{
-    font-size: 1.3vw;
-    font-family:'Trebuchet MS', Arial, sans-serif;
-}
-
-h1{
-    margin: 0;
-    padding: 0;
-    font-size: 4vw;
-    font-weight: 900;
-    font-family:'Trebuchet MS', Arial, sans-serif;
-    padding-bottom: 5rem;
-    padding-top: 2rem;
-}
-p{
-    font-weight: 700;
-    font-size: 2.5vw;
-    font-family:'Trebuchet MS', Arial, sans-serif;
-    cursor: pointer;
-}
-.inputMod{
-    border: underline;
     border-radius: 8px;
-    font-size: 2vw;
-    color: #000879;
+    
 }
 
-#botao{
-    font-size: 2vw;
-    padding: 0.2% 5%;
+.mb-3 input{
+
+
+    color:black;
+}
+
+.form-label,
+.form-control {
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #1e2a3a;
+    border-color: #1e2a3a;
+}
+
+.btn-primary:hover {
+    background-color: #132032;
+    border-color: #132032;
+}
+
+.login-logo {
+    text-align: center; /* Centralizar conteúdo */
+    margin-bottom: 20px; /* Espaço entre a logo e o formulário */
+}
+
+.login-logo img {
+    max-width: 100%; /* Ajustar a largura máxima da imagem */
+    height: auto; /* Altura automática proporcional à largura */
+}
+
+.col-lg-4 {
+    text-align: center; /* Centralizar conteúdo */
 }

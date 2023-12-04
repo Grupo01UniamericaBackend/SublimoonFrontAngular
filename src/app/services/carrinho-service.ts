@@ -9,7 +9,7 @@ import { Carrinho } from "../models/carrinho";
 
 export class CarrinhoService {
     
-    API: string = 'http://localhost:8081/api/carrinho';
+    API: string = 'http://3.129.90.134:8081/api/carrinho';
     http = inject(HttpClient);
 
 

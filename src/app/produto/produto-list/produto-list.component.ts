@@ -253,8 +253,8 @@ export class ProdutoListComponent {
 	}
 
   imagens = [
-    'assets/banner-subli-certo.png',
-    'assets/carrosel-Frete-Gratis.png'
+    'https://pbs.twimg.com/media/GAe2iITWEAAbFpB?format=jpg&name=large',
+    'https://pbs.twimg.com/media/GAe2iIUWgAEJIgT?format=jpg&name=large'
   ]
 }
 

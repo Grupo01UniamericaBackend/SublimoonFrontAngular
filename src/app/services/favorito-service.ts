@@ -9,7 +9,7 @@ import { Favorito } from "../models/favorito";
 
 export class FavoritoService {
     
-    API: string = 'http://localhost:8081/api/favorito';
+    API: string = 'http://3.129.90.134:8081/api/favorito';
     http = inject(HttpClient);
 
 

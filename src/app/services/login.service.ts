@@ -11,7 +11,7 @@ import { JwtPayload, jwtDecode } from "jwt-decode";
 })
 export class LoginService {
 
-  API: string = 'http://localhost:8081/api/user';
+  API: string = 'http://3.129.90.134:8081/api/user';
 
   http = inject(HttpClient);
 

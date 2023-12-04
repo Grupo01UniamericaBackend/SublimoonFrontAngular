@@ -9,7 +9,7 @@ import { Envio } from "../models/envio";
 
 export class EnvioService {
     
-    API: string = 'http://localhost:8081/api/envio';
+    API: string = 'http://3.129.90.134:8081/api/envio';
     http = inject(HttpClient);
 
 

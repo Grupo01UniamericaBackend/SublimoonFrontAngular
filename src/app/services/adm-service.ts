@@ -10,7 +10,7 @@ import { Adm } from "../models/adm";
 
 export class AdmService {
     
-    API: string = 'http://localhost:8081/api/adm';
+    API: string = 'http://3.129.90.134:8081/api/adm';
     http = inject(HttpClient);
 
 

@@ -2,7 +2,10 @@ import { Component, Inject, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Adm } from 'src/app/models/adm';
 import { Cliente } from 'src/app/models/cliente';
+import { Login } from 'src/app/models/login';
+import { User } from 'src/app/models/user';
 import { ClienteService } from 'src/app/services/cliente-service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,56 +14,32 @@ import { ClienteService } from 'src/app/services/cliente-service';
 })
 export class LoginComponent {
 
+  usuario: User = new User();
+  login: Login = new Login();
   roteador = inject(Router);
-  clienteService = inject(ClienteService);
-  adm: Adm = new Adm;
+  loginService = inject(LoginService);
 
-  lista:Cliente[]=[];
-
-  nome: String = '';
-  senha: String = '';
-
-  constructor(){
-    this.listAll();
+  constructor() {
+    this.loginService.removerToken();
   }
-  
+
   logar() {
-    if (this.nome == "AdmUserPred123" && this.senha == "123senhaAdm321") {
-      this.roteador.navigate(['/admin/produto']);
-    } else {
-      let clienteEncontrado = false;
-      for (let cliente of this.lista) {
-        if (this.senha == cliente.senha && this.nome == cliente.nome) {
-          clienteEncontrado = true;
-          this.salvarCliente("cliente", cliente);
-          break; // Para sair do loop depois de encontrar o cliente tomaaa
-        }
-      }
-  
-      if (clienteEncontrado) {
-        alert("Bem-vindo(a)!!");
-        this.roteador.navigate(['/cliente/produto']);
-      } else {
-        alert("Nome ou senha incorretos!!");
-      }
-    }
-  }
 
-  listAll(){
 
-    this.clienteService.listAll().subscribe({
-      next: lista =>{
-        this.lista = lista;
+    this.loginService.logar(this.login).subscribe({
+      next: user => { // QUANDO DÁ CERTO
+        console.log(user);
+        this.loginService.addToken(user.token);
+        this.roteador.navigate(['admin/produto']);
       },
-      error: erro => {
-        alert("Algo deu errado!");
+      error: erro => { // QUANDO DÁ ERRO
+        alert('Exemplo de tratamento de erro/exception! Observe o erro no console!');
         console.error(erro);
       }
-    })
+    });
+
+
+
 
   }
-  salvarCliente(chave: string, cliente: Cliente): void {
-    localStorage.setItem(chave, JSON.stringify(cliente));
-  }
-
 }

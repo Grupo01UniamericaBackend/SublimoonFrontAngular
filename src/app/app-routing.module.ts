@@ -19,7 +19,12 @@ const routes: Routes = [
   {path: "admin", component: IndexComponent, children:[
     {path: "Cadproduto", component: ProdutoDetailsComponent},
     {path: "produto", component: ProdutoListComponent},
-    { path: "detalhes/:id", component: ProdutoDetalhadoComponent }
+    { path: "detalhes/:id", component: ProdutoDetalhadoComponent },
+    {path: "dadosCliente", component: ClienteComponent},
+    {path:"contato", component: ContatoComponent},
+    {path:"produto/:categoria",component: ProdutoCategoriaComponent},
+    {path: "produto/favoritos", component: FavoritosComponent},
+    {path: "carrinho", component: CarrinholistComponent}
 
   ]},
   {path: "cliente", component: IndexComponent, children:[

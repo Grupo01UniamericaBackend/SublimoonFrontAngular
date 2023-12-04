@@ -1,61 +1,44 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.container{
 
-}
-.cadLoginDiv{
-    text-align: center; /* Centraliza o texto dentro do container */
-    background-color: #2669c7;
-    color: white;
-    height: 100vh;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-h1{
-    color: #000879;
-    margin: 0;
-    padding: 0;
-    font-size: 2.2rem;
-    font-weight: 900;
-    font-family:'Trebuchet MS', Arial, sans-serif;
-    padding-bottom: 3.5vh;
-    padding-top: 2rem;
-}
-p{
-    font-weight: 700;
-    font-size: 1.4vw;
-    display: flex;
-    margin-left: 10%;
-    margin-top: 10px;
-    font-family:'Trebuchet MS', Arial, sans-serif;
-    cursor: pointer;
-}
-.inputMod{
-    width: 80%;
-    padding: 4px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #000879;
-}
-.cadastrar{
-    font-size: 1.0rem;
-    font-family:'Trebuchet MS', Arial, sans-serif;
-}
-
-form{
-    color:#000879;
-    background-color: white;
-    width: 40vw;
-    height: 90vh;
-    border-radius: 20px;
-}
-
-#botao{
-        font-size: 2rem;
-        padding: 0.2% 5%;
-}
+    min-height: 100vh;
+    min-width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    }
+    .login-form {
+      margin-top: 230px;
+      background-color: #FFA500; /* laranja claro */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .login-form label {
+      color: #ffffff; /* branco */
+    }
+    
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      background-color: #ffffff; /* branco */
+      color: #333333; /* cor de texto padrão */
+      border: 1px solid #FFA500; /* laranja claro */
+    }
+    
+    .login-form input[type="text"]:focus,
+    .login-form input[type="password"]:focus {
+      border: 1px solid #FF6347; /* laranja mais escuro quando em foco */
+    }
+    
+    .btn-primary {
+      background-color: #FF6347; /* laranja mais escuro */
+      border-color: #FF6347; /* laranja mais escuro */
+    }
+    
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #FF4500; /* tom mais intenso de laranja ao passar o mouse ou focar */
+      border-color: #FF4500; /* tom mais intenso de laranja ao passar o mouse ou focar */
+    }
+    

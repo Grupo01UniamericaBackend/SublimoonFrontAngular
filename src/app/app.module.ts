@@ -18,6 +18,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { ProdutoCategoriaComponent } from './produto/produto-categoria/produto-categoria.component';
 import { FavoritosComponent } from './produto/favoritos/favoritos.component';
 import { CarrinholistComponent } from './carrinho/carrinholist/carrinholist.component';
+import { httpInterceptorProviders } from './interceptors/httpinterceptor.service';
+
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { CarrinholistComponent } from './carrinho/carrinholist/carrinholist.comp
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

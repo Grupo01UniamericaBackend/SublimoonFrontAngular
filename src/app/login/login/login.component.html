@@ -1,16 +1,24 @@
-<div class="divLogin">
-    <form action="">
-        <h1>Login 🌙</h1>
-        <p>Nome de Usuário:</p>
-        <input type="text" name="nome" placeholder="Usuario" class="inputMod" [(ngModel)]="nome">
-        <br>
-        <p id="senhaInput">Senha:</p>
-        <input type="password" name="senha" placeholder="Senha" class="inputMod" [(ngModel)]="senha">
-        <br>
-        <br>
-        <input type="button" value="Logar" class="btn btn-primary" id="botao" (click)="logar()">
-        <br>
-        <br>
-        <p class="cadastrar" routerLink="/cadLogin">Não tem uma conta? Cadastre-se!!</p>
-    </form>
-</div>
+<div class="container">
+
+    <div class="row justify-content-center"> <!-- Adicionando 'justify-content-center' para centralizar horizontalmente -->
+  
+        <div class="col-lg-4">
+            <form class="login-form" (ngSubmit)="logar()">
+                <div class="mb-3">
+                    <label for="exampleInputText1" class="form-label">Login:</label>
+                    <input type="text" class="form-control" name="exampleInputText1" aria-describedby="emailHelp"
+                        [(ngModel)]="login.username">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Senha:</label>
+                    <input type="password" class="form-control" name="exampleInputPassword1"
+                        [(ngModel)]="login.password">
+                </div>
+                <button type="submit" class="btn btn-primary">Logar</button>
+            </form>
+        </div>
+  
+    </div>
+  
+  </div>
+  

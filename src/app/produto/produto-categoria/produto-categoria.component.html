@@ -25,16 +25,16 @@
     </div>
     <div class="linha">
         <h1 id="h1dest">Nossos destaques:</h1>
-        <button id="btn" *ngIf="adminRota" type="button"class="btn btn-info" (click)="adicionar(modal1)" >ADICIONAR PRODUTO</button>
+        <button id="btn" *ngIf="isAdmin" type="button"class="btn btn-info" (click)="adicionar(modal1)" >ADICIONAR PRODUTO</button>
     </div>
 
     <div class="retangulos">
         <div class="retangulo" *ngFor="let produto of lista;let i = index">
-            <div *ngIf="adminRota"><strong>#ID:</strong> {{ produto.id }}</div>
+            <div *ngIf="isAdmin"><strong>#ID:</strong> {{ produto.id }}</div>
             <img  class="imagemProd" src={{produto.imagem}}>
             <div class="nomeProd"> {{ produto.nome }}</div>
             <div class="precoProd"><strong>Preço: R$</strong> {{ produto.preco }}</div>
-            <div *ngIf="adminRota && !modoLancamento" class="divADM">
+            <div *ngIf="isAdmin && !modoLancamento" class="divADM">
                 <button class="btn btn-outline-warning" id="editarButton" (click)="editar(modal2, produto, i)">Editar</button>
                 <button class="btn btn-outline-danger" (click)="deletar(produto.id)">Excluir</button>
             </div>

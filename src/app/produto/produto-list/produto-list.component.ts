@@ -10,6 +10,7 @@ import { ProdutoService } from 'src/app/services/produto-service';
 import { NgbCarousel, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-produto-list',
@@ -41,7 +42,11 @@ export class ProdutoListComponent {
   produtoService = inject(ProdutoService);
   favoritoService = inject(FavoritoService);
 
-  
+  loginService = new LoginService();
+
+  isAdmin = this.loginService.hasPermission('ADMIN');
+  isUser = this.loginService.hasPermission('USER');
+
 
   constructor(private router: Router, private route: ActivatedRoute){
     this.listAll();

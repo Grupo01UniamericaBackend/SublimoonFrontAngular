@@ -13,6 +13,6 @@ export class HeaderComponent {
     
   }
   categorias(categoria: string){
-    this.router.navigate(['cliente/produto/', categoria]);
+    this.router.navigate(['admin/produto/', categoria]);
 }
 }

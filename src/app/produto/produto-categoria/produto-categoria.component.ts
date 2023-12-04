@@ -4,6 +4,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Categoria } from 'src/app/enums/categoria';
 import { Favorito } from 'src/app/models/favorito';
 import { Produto } from 'src/app/models/produto';
+import { LoginService } from 'src/app/services/login.service';
 import { ProdutoService } from 'src/app/services/produto-service';
 
 @Component({
@@ -30,6 +31,11 @@ export class ProdutoCategoriaComponent {
   modalService = inject(NgbModal);
   modalRef!: NgbModalRef;
   produtoService = inject(ProdutoService);
+
+  loginService = new LoginService();
+
+  isAdmin = this.loginService.hasPermission('ADMIN');
+  isUser = this.loginService.hasPermission('USER');
 
   
 

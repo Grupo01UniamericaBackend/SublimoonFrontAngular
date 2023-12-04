@@ -2,20 +2,13 @@
     <form action="">
         <h1>Crie sua Conta !!</h1>
         <p>Digite seu nome de Usuário:</p>
-        <input type="text" name="Usuario" placeholder="Usuario" class="inputMod" [(ngModel)]="cliente.nome">
+        <input type="text" name="Usuario" placeholder="Usuario" class="inputMod" [(ngModel)]="usuario.username">
         <br>
         <p id="senhaInput">Digite sua senha:</p>
-        <input type="text" name="Senha" placeholder="Senha" class="inputMod" [(ngModel)]="cliente.senha">
+        <input type="text" name="Senha" placeholder="Senha" class="inputMod" [(ngModel)]="usuario.password">
         <br>
-        <p id="telefoneInput">Digite seu telefone:</p>
-        <input type="text" name="Telefone" placeholder="Telefone" class="inputMod" [(ngModel)]="cliente.telefone">
-        <br>
-        <p id="emailInput">Digite seu e-mail:</p>
-        <input type="text" name="Email" placeholder="Email" class="inputMod" [(ngModel)]="cliente.email">
-        <br>
-        <p id="cpfInput">Digite seu CPF:</p>
-        <input type="text" name="CPF" placeholder="CPF" class="inputMod" [(ngModel)]="cliente.cpf">
-        <br>
+        <p id="senhaInput">Digite sua role:</p>
+        <input type="text" name="Senha" placeholder="Senha" class="inputMod" [(ngModel)]="usuario.role">
         <br>
         <input routerLink="/login" type="button" value="Cadastrar" class="btn btn-primary" id="botao" (click)="salvar()">
     </form>

@@ -19,6 +19,8 @@ export class LoginComponent {
   roteador = inject(Router);
   loginService = inject(LoginService);
 
+  
+
   constructor() {
     this.loginService.removerToken();
   }

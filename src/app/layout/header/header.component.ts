@@ -15,4 +15,14 @@ export class HeaderComponent {
   categorias(categoria: string){
     this.router.navigate(['admin/produto/', categoria]);
 }
+
+abrirhome(){
+
+  this.router.navigate(['admin/produto']);
+}
+
+abrircarrinho(){
+
+  this.router.navigate(['admin/carrinho']);
+}
 }

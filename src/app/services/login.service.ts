@@ -17,6 +17,11 @@ export class LoginService {
 
   constructor() { }
 
+  postar(user: User): Observable<any>{
+    const list = `${this.API}/postar`;
+    return this.http.post<any>(list, user);
+  }
+
   logar(login: Login): Observable<User> {
     return this.http.post<User>(this.API, login);
   }

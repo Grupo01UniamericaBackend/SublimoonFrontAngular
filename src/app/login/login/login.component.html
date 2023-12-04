@@ -1,24 +1,41 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-4">
-            <div class="login-logo">
-                
-                <img src="https://pbs.twimg.com/media/GAe2mdCXIAAQeo4?format=png&name=360x360" alt="Logo">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="login-logo">
+                    <img src="https://pbs.twimg.com/media/GAe2mdCXIAAQeo4?format=png&name=360x360" alt="Logo">
+                </div>
+                <form class="login-form" (ngSubmit)="logar()">
+                    <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label">Login:</label>
+                        <input type="text" class="form-control" name="exampleInputText1" aria-describedby="emailHelp"
+                            [(ngModel)]="login.username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Senha:</label>
+                        <input type="password" class="form-control" name="exampleInputPassword1"
+                            [(ngModel)]="login.password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Logar</button>
+                </form>
+                <div class="botaocad">
+                    <input routerLink="/cadLogin" type="button" value="Cadastrar" class="btn btn-primary" id="botao">
+                </div>
             </div>
-            <form class="login-form" (ngSubmit)="logar()">
-                <div class="mb-3">
-                    <label for="exampleInputText1" class="form-label">Login:</label>
-                    <input type="text" class="form-control" name="exampleInputText1" aria-describedby="emailHelp"
-                        [(ngModel)]="login.username">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" name="exampleInputPassword1"
-                        [(ngModel)]="login.password">
-                </div>
-                <button type="submit" class="btn btn-primary">Logar</button>
-            </form>
         </div>
     </div>
-</div>
+
+</body>
+
+</html>
